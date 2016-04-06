@@ -63,6 +63,7 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
+                                <li><a href="#"><i class="fa fa-btn fa-anchor"></i>Placeholder</a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                         </li>
@@ -72,7 +73,20 @@
         </div>
     </nav>
 
-    @yield('content')
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="panel panel-default">
+                    <div class="panel-heading">{{$panel_heading}}</div>
+
+                    <div class="panel-body">
+                        @yield('content')
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

@@ -24,6 +24,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('home',['panel_heading' => 'Succesfully logged in!']);
     }
 }
