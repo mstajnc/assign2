@@ -13,7 +13,10 @@ class CreateCourtsTable extends Migration
     public function up()
     {
         Schema::create('courts', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('court_id');
+            $table->string('court_name');
+            $table->string('surface');
+            $table->integer('under_construction')->unsigned();
             $table->timestamps();
         });
     }
