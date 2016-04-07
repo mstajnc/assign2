@@ -27,7 +27,7 @@ class CourtController extends Controller
      */
     public function create()
     {
-        //
+        return view('courts.create',['panel_heading' => 'Create a court']);
     }
 
     /**
@@ -38,7 +38,18 @@ class CourtController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $court = new Court($request->all());
+        // $court->addCourt($court);
+        $court->save();
+
+        // $request->create([
+        //     'court_name' => $request->court_name,
+        //     'surface' => $request->surface,
+        //     'under_construction' => $request->under_construction,
+        // ]);
+        return redirect('/courts');
+        // return back();
     }
 
     /**
@@ -71,8 +82,10 @@ class CourtController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-     public function update(Request $request, Court $court){
+     public function update(Request $request, $court){
     	
+        $court = Court::where('court_id', $court)->first();
+
     	$court->update($request->all());
     	return back();
     }

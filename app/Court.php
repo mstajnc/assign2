@@ -10,4 +10,8 @@ class Court extends Model
 
     protected $fillable = ['court_name', 'surface', 'under_construction'];
 
+    public function addCourt(Court $court){
+
+    	return $this->save($court);
+    }
 }

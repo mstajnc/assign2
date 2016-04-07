@@ -9,10 +9,10 @@
 	<input type="hidden" name="_token" value="{{ csrf_token() }}">
 	{{method_field('PATCH')}}
 				<div class="form-group">
-					<textarea name="body" class="form-control">{{$court->court_name}}</textarea>
+					<textarea name="court_name" class="form-control">{{$court->court_name}}</textarea>
 				</div>
 				<div class="form-group">
-					<textarea name="body" class="form-control">{{$court->surface}}</textarea>
+					<textarea name="surface" class="form-control">{{$court->surface}}</textarea>
 				</div>
 				<div class="form-group">
 					<button type="submit" class="btn btn-primary">Update court</button>
