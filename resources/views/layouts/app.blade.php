@@ -48,6 +48,8 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('/courts/create') }}">Create a court</a></li>
+                    <li><a href="{{ url('/courts') }}">All courts</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -78,7 +80,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{$panel_heading}}</div>
+                    <div class="panel-heading">@yield('panel_heading')</div>
 
                     <div class="panel-body">
                         @yield('content')

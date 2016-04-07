@@ -26,7 +26,14 @@
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
-    Route::get('/', function () {return view('welcome',['panel_heading' => 'Welcome!']);});
+    Route::get('/', function () {return view('welcome');});
     
     Route::get('/home', 'HomeController@index');
+
+    Route::get('/courts', 'CourtController@index');
+    Route::get('/courts/create', 'CourtController@create');
+    Route::post('/courts/store', 'CourtController@store');
+    Route::get('/courts/{court}', 'CourtController@show');
+    Route::patch('/courts/{court}', 'CourtController@update');
+
 });
