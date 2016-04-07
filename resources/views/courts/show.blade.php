@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('panel_heading', $court->court_name)
+@section('panel_heading', 'Update'.' '.$court->court_name)
 
 @section('content')
 	<h3>Update court details</h3>
