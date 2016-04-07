@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('panel_heading', 'Create a court')
+
 @section('content')
 	<h3>Create a court</h3>
 

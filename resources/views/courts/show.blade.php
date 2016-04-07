@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
+@section('panel_heading', $court->court_name)
+
 @section('content')
 	<h3>Update court details</h3>
-
-	 
 
 	<form method="POST" action="/courts/{{$court->court_id}}">
 	<input type="hidden" name="_token" value="{{ csrf_token() }}">
