@@ -35,5 +35,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('/courts/store', 'CourtController@store');
     Route::get('/courts/{court}', 'CourtController@show');
     Route::patch('/courts/{court}', 'CourtController@update');
+    Route::delete('/courts/{court}', 'CourtController@destroy');
 
 });
