@@ -17,7 +17,7 @@ class CourtController extends Controller
      */
     public function index(){
 		$courts = Court::all();
-		return view('courts.index',['panel_heading' => 'List of courts'], compact('courts'));
+		return view('courts.index', compact('courts'));
     }
 
     /**
@@ -27,7 +27,7 @@ class CourtController extends Controller
      */
     public function create()
     {
-        return view('courts.create',['panel_heading' => 'Create a court']);
+        return view('courts.create');
     }
 
     /**
@@ -61,7 +61,7 @@ class CourtController extends Controller
     public function show(Court $court){
 
 
-    	return view('courts.show',['panel_heading' => 'Court details'], compact('court'));
+    	return view('courts.show', compact('court'));
     }
 
     /**
