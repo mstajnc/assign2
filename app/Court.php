@@ -14,4 +14,9 @@ class Court extends Model
 
     	return $this->save($court);
     }
+
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
 }

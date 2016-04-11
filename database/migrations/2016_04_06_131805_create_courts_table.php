@@ -16,7 +16,7 @@ class CreateCourtsTable extends Migration
             $table->increments('court_id');
             $table->string('court_name');
             $table->string('surface');
-            $table->integer('under_construction')->unsigned();
+            $table->boolean('under_construction');
             $table->timestamps();
         });
     }
