@@ -14,7 +14,18 @@
 					<textarea name="court_name" class="form-control">{{$court->court_name}}</textarea>
 				</div>
 				<div class="form-group">
-					<textarea name="surface" class="form-control">{{$court->surface}}</textarea>
+					<select  class="form-control" name="surface">
+    							<option value="grass">Grass</option>
+    							<option value="clay">Clay</option>
+    							<option value="hardcourt">Hardcourt</option>
+    							<option value="carpet">Carpet</option>
+    				</select>
+				</div>
+				<div class="form-group">
+					<select  class="form-control" name="under_construction">
+    							<option value="1">Yes</option>
+    							<option value="0">No</option>
+    				</select>
 				</div>
 				<div class="form-group">
 					<button type="submit" class="btn btn-primary">Update court</button>
