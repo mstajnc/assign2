@@ -37,4 +37,11 @@ Route::group(['middleware' => 'web'], function () {
     Route::patch('/courts/{court}', 'CourtController@update');
     Route::delete('/courts/{court}', 'CourtController@destroy');
 
+    Route::get('/bookings', 'BookingController@index');
+    Route::get('/bookings/create', 'BookingController@create');
+    Route::post('/bookings/store', 'BookingController@store');
+    Route::get('/bookings/{booking}', 'BookingController@show');
+    Route::patch('/bookings/{booking}', 'BookingController@update');
+    Route::delete('/bookings/{booking}', 'BookingController@destroy');
+
 });
