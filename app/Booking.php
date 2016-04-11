@@ -9,7 +9,7 @@ class Booking extends Model
 {
 
 	 protected $fillable = [
-        'booking', 'notes',
+        'booking', 'notes', 'user_id', 'court_id'
     ];
      public function user()
     {
@@ -19,5 +19,10 @@ class Booking extends Model
     public function court()
     {
         return $this->belongsTo(Court::class);
+    }
+
+    public function addBooking(Booking $booking, $userId, $courtId){
+     	$booking->user_id = $userId;
+    	return $this->save(compact($booking));
     }
 }

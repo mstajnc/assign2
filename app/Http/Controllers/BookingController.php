@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Court;
+use App\Booking;
+use Auth;
 
 class BookingController extends Controller
 {
@@ -26,8 +28,8 @@ class BookingController extends Controller
      */
     public function create()
     {
-        $courts = Court::where('under_construction', 0)->get();
-        return $courts;
+        $available_courts = Court::where('under_construction', 0)->get();
+        return view('bookings.create', compact('available_courts')); 
     }
 
     /**
@@ -36,9 +38,17 @@ class BookingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+
+    public function store(Request $request, Booking $booking){
+        /*$this->validate($request, [
+            'body' => 'required|min:6'
+            ]);*/
+
+        $booking = new Booking($request->all());
+        $userId = Auth::user()->id;
+        $courtId = Court::where('court_id', $booking)->first();
+        $booking->addBooking($booking, $userId, $courtId);
+        return back();
     }
 
     /**
