@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Court;
 
 class BookingController extends Controller
 {
@@ -25,7 +26,8 @@ class BookingController extends Controller
      */
     public function create()
     {
-        //
+        $courts = Court::where('under_construction', 0)->get();
+        return $courts;
     }
 
     /**
