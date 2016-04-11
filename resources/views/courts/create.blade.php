@@ -28,8 +28,12 @@
 				<div class="form-group">
 					<label class="col-md-4 control-label">Surface</label>
 					<div class="col-md-6">
-                        <input type="text" class="form-control" name="surface" value="{{old('surface')}}">
-
+                        <select  class="form-control" name="surface">
+    							<option value="grass">Grass</option>
+    							<option value="clay">Clay</option>
+    							<option value="hardcourt">Hardcourt</option>
+    							<option value="carpet">Carpet</option>
+    					</select>
                         @if ($errors->has('surface'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('surface') }}</strong>
@@ -43,7 +47,10 @@
 				<div class="form-group">
 					<label class="col-md-4 control-label">Under construction</label>
 					<div class="col-md-6">
-                        <input type="text" class="form-control" name="under_construction" value="{{old('under_construction')}}">
+                         <select  class="form-control" name="under_construction">
+    							<option value="1">Yes</option>
+    							<option value="0">No</option>
+    					</select>
 
                         @if ($errors->has('under_construction'))
                             <span class="help-block">
