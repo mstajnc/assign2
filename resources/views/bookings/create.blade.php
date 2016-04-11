@@ -8,6 +8,7 @@
 	<form method="POST" action="/bookings/store">
 	{{csrf_field()}}
 			
+			
 
 	</form>
 	@if (count($errors))
