@@ -3,8 +3,10 @@
 @section('panel_heading', 'Create a court')
 
 @section('content')
+	@can('create_court')
+	<!-- The Current User Can Create A Court -->
 	<h3>Create a court</h3>
-
+	 
 	<form method="POST" action="/courts/store">
 	{{csrf_field()}}
 			<div class="form-group{{ $errors->has('court_name') ? ' has-error' : '' }}">
@@ -68,4 +70,12 @@
 			@endforeach
 		</ul>
 	@endif
+	
+	@else
+	<!-- The Current User Cannot Create A Court -->
+	<h2>Insufficient permissions.</h2>
+
+	@endcan
+
+
 @stop

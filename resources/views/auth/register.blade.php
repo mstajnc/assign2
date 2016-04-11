@@ -20,7 +20,7 @@
             </div>
         </div>
        
-        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+        <div class="form-group{{ $errors->has('fname') ? ' has-error' : '' }}">
             <label class="col-md-4 control-label">First name</label>
 
             <div class="col-md-6">
@@ -34,7 +34,7 @@
             </div>
         </div>
 
-        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+        <div class="form-group{{ $errors->has('surname') ? ' has-error' : '' }}">
             <label class="col-md-4 control-label">Surname</label>
 
             <div class="col-md-6">
@@ -62,7 +62,7 @@
             </div>
         </div>
 
-        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+        <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
             <label class="col-md-4 control-label">Phone number</label>
 
             <div class="col-md-6">
