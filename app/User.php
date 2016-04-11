@@ -43,10 +43,7 @@ class User extends Authenticatable
             return $this->roles->contains('name', $role);
         }
 
-
         //if a collection of roles is referenced
         return (bool) $role->intersect($this->roles)->count();
-
-
     }
 }
