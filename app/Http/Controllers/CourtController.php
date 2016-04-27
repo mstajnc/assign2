@@ -40,16 +40,8 @@ class CourtController extends Controller
     {
 
         $court = new Court($request->all());
-        // $court->addCourt($court);
         $court->save();
-
-        // $request->create([
-        //     'court_name' => $request->court_name,
-        //     'surface' => $request->surface,
-        //     'under_construction' => $request->under_construction,
-        // ]);
         return redirect('/courts');
-        // return back();
     }
 
     /**

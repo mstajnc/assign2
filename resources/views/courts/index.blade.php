@@ -16,7 +16,7 @@
         
             @foreach($courts as $court)
                 <tr>
-                    <!-- Task Name -->
+                    <!-- Court Name and Surface -->
                     <td class="table-text">
                         <div><a href="/courts/{{ $court->court_id}}">{{$court->court_name}} ({{$court->surface}})</a></div>
                     </td>                            
