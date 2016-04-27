@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Court;
 
 class HomeController extends Controller
 {
@@ -24,6 +25,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $courts = Court::all()->count();
+        $available_courts = Court::where('under_construction', 0)->count();
+        $construction = Court::where('under_construction', 1)->count();
+        $data = array (
+            'courts' => $courts,
+            'available_courts' => $available_courts,
+            'construction' => $construction
+            );
+
+        return view('home', $data);
     }
 }
