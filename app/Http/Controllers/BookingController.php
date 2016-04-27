@@ -40,10 +40,6 @@ class BookingController extends Controller
      */
 
     public function store(Request $request, Booking $booking){
-        /*$this->validate($request, [
-            'body' => 'required|min:6'
-            ]);*/
-
         $booking = new Booking($request->all());
         $userId = Auth::user()->id;
         $courtId = Court::where('court_id', $booking)->first();
