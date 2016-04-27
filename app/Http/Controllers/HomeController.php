@@ -28,12 +28,12 @@ class HomeController extends Controller
         $courts = Court::all()->count();
         $available_courts = Court::where('under_construction', 0)->count();
         $construction = Court::where('under_construction', 1)->count();
-        $data = array (
+        $court_stats = array (
             'courts' => $courts,
             'available_courts' => $available_courts,
             'construction' => $construction
             );
 
-        return view('home', $data);
+        return view('home', $court_stats);
     }
 }
