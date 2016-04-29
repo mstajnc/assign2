@@ -27,13 +27,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies($gate);
 
-        // Register permissions with Gate
-        /*foreach ($this->getPermissions() as $permission) {
-            $gate->define($permission->name, function ($user) use ($permission) {
-                return $user->hasPermission($permission);
-            });
-        }*/
-        foreach ($this->getPermissions() as $permission) {
+        foreach ($this->getPermissions() as $permission) 
+        {
             $gate->define($permission->name, function ($user) use ($permission){
                 return $user->hasRole($permission->roles);
             });

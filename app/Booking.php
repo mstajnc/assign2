@@ -21,7 +21,8 @@ class Booking extends Model
         return $this->belongsTo(Court::class);
     }
 
-    public function addBooking(Booking $booking, $userId, $courtId){
+    public function addBooking(Booking $booking, $userId, $courtId)
+    {
      	$booking->user_id = $userId;
     	return $this->save(compact($booking));
     }
