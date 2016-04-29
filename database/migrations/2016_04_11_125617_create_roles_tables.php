@@ -41,7 +41,7 @@ class CreateRolesTables extends Migration
                   ->on('roles')
                   ->onDelete('cascade');
 
-            $table->primary(['permission_Id', 'role_id']);
+            $table->primary(['permission_id', 'role_id']);
         });
 
         //linking table for roles associated with a user
@@ -70,6 +70,9 @@ class CreateRolesTables extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('role_user');
+        Schema::drop('permission_role');
+        Schema::drop('permissions');
+        Schema::drop('roles');
     }
 }
