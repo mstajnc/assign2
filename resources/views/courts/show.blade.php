@@ -11,9 +11,11 @@
 	<input type="hidden" name="_token" value="{{ csrf_token() }}">
 	{{method_field('PATCH')}}
 				<div class="form-group">
+				<label class="col-md-4 control-label">Court name</label>
 					<textarea name="court_name" class="form-control">{{$court->court_name}}</textarea>
 				</div>
 				<div class="form-group">
+				<label class="col-md-4 control-label">Surface</label>
 					<select  class="form-control" name="surface">
     							<option value="grass">Grass</option>
     							<option value="clay">Clay</option>
@@ -22,6 +24,7 @@
     				</select>
 				</div>
 				<div class="form-group">
+				<label class="col-md-4 control-label">Under construction</label>
 					<select  class="form-control" name="under_construction">
     							<option value="1">Yes</option>
     							<option value="0">No</option>
