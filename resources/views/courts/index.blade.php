@@ -3,6 +3,7 @@
 @section('panel_heading', 'List of all courts')
 
 @section('content')
+
 	<table class="table table-striped task-table">
         @if (count($courts) > 0)
         <!-- Table Headings -->
@@ -21,6 +22,7 @@
                         <div><a href="/courts/{{ $court->court_id}}">{{$court->court_name}} ({{$court->surface}})</a></div>
                     </td>                            
                         <!-- Delete Button -->
+                        @can('update_court') <!-- The Current User Can Delete A Court -->
                         <td>
                             <form action="/courts/{{ $court->court_id }}" method="POST">
                                 {{ csrf_field() }}
@@ -33,7 +35,8 @@
 		                            </div>
 		                        </div>
                             </form>
-                        </td>                                                           
+                        </td> 
+                        @endcan                                                          
                 </tr>
             @endforeach
         @else <h2>"There are currently no courts to display."</h2>
@@ -47,4 +50,7 @@
         @endif
         </tbody>
     </table>
+
+
+    
 @stop
