@@ -50,6 +50,7 @@
                     <li><a href="{{ url('/') }}">Home</a></li>
                     <li><a href="{{ url('/courts/create') }}">Create a court</a></li>
                     <li><a href="{{ url('/courts') }}">All courts</a></li>
+                    <li><a href="{{ url('/bookings/create') }}">Book a court</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
