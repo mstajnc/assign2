@@ -48,9 +48,9 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/') }}">Home</a></li>
-                    <li><a href="{{ url('/courts/create') }}">Create a court</a></li>
+                   @can('create_court')<li><a href="{{ url('/courts/create') }}">Create a court</a></li>@endcan
                     <li><a href="{{ url('/courts') }}">All courts</a></li>
-                    <li><a href="{{ url('/bookings/create') }}">Book a court</a></li>
+                    @can('create_booking')<li><a href="{{ url('/bookings/create') }}">Book a court</a></li>@endcan
                 </ul>
 
                 <!-- Right Side Of Navbar -->
