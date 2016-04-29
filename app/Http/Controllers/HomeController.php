@@ -41,7 +41,7 @@ class HomeController extends Controller
                     ->addNumberColumn('Percent')
                     ->addRow(['Courts available', $available_courts])
                     ->addRow(['Courts under construction', $construction]);
-        \Lava::PieChart('Courts', $court_chart, ['title' => 'Courts availability']); //chart's extra details
+        \Lava::PieChart('Courts', $court_chart, ['title' => 'Courts availability', 'pieSliceText' => 'value']); //chart's extra options
 
         return view('home', compact($court_chart), $court_stats);
     }
