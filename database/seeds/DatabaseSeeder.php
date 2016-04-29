@@ -62,7 +62,7 @@ class DatabaseSeeder extends Seeder
 
         DB::table('permissions')->insert([
             'name' => 'update_court',
-            'label' => 'Update court',
+            'label' => 'Update court and delete',
         ]);
 
         DB::table('permissions')->insert([
